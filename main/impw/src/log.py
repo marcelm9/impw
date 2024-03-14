@@ -8,8 +8,8 @@ class Log:
 
     @staticmethod
     def warn(msg: str):
-        print(f"\[[purple]impw[/]]\[[yellow]info[/]] {msg}")
+        print(f"\[[purple]impw[/]]\[[yellow]warn[/]] {msg}")
 
     @staticmethod
     def error(msg: str):
-        print(f"\[[purple]impw[/]]\[[red]info[/]] {msg}")
+        print(f"\[[purple]impw[/]]\[[red]error[/]] {msg}")

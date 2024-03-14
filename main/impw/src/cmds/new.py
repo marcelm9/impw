@@ -11,7 +11,11 @@ ARGS_LEN = 1
 def new(args: list[str]):
     if len(args) != ARGS_LEN:
         Log.error("invalid args")
-        return
+        exit(1)
+
+    if Database.exists(args[0]):
+        Log.error(f"Image for name '{args[0]}' already exists")
+        exit(1)
     
     screen = pygame.display.set_mode((SIDELENGTH * PIXEL_SIZE, SIDELENGTH * PIXEL_SIZE))
     surface = pygame.Surface((SIDELENGTH, SIDELENGTH))
@@ -58,4 +62,4 @@ def new(args: list[str]):
         pygame.display.flip()
         fpsclock.tick(fps)
 
-    Database.save(surface)
+    Database.save(surface, args[0])

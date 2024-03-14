@@ -1,3 +1,6 @@
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+
 import argparse
 
 from impw.src.log import Log
@@ -14,12 +17,15 @@ command = parsed_args.command
 args = parsed_args.args
 
 match command:
+    case "help":
+        print("ipmw - Password manager using images")
+        print("Available commands:")
+        for c in "copy.delete.list.new.show".split("."):
+            print(f" - {c}")
     case "copy":
         copy(args)
     case "delete":
         delete(args)
-    case "edit":
-        edit(args)
     case "list":
         list_(args)
     case "new":

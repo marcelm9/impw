@@ -3,7 +3,7 @@ docs
 .vscode
 .idea
 
-**/db/**.txt
+**/db/**.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
