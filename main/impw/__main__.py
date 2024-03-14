@@ -20,7 +20,7 @@ match command:
     case "help":
         Log.info("ipmw - Password manager using images")
         Log.info("Available commands:")
-        for c in "copy.list.new.show".split("."):
+        for c in "copy <name>.list.new <name>.show <name>".split("."):
             Log.info(f" - {c}")
     case "copy":
         copy(args)

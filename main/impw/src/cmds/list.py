@@ -10,7 +10,7 @@ def list_(args: list[str]):
         Log.error("invalid args")
         exit(1)
 
-    files = [f.removesuffix(".png") for f in os.listdir(PATH_DB) if f != "__init__.py"]
+    files = [f.removesuffix(".png") for f in os.listdir(PATH_DB) if not f.startswith("__")]
 
     if len(files) == 0:
         Log.info("No saves")
