@@ -13,3 +13,8 @@ class Log:
     @staticmethod
     def error(msg: str):
         print(f"\[[purple]impw[/]]\[[red]error[/]] {msg}")
+
+    @staticmethod
+    def input(msg: str):
+        print(f"\[[purple]impw[/]]\[[cyan]input[/]] {msg}", end="")
+        return input()

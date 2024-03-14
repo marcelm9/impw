@@ -20,7 +20,7 @@ match command:
     case "help":
         Log.info("ipmw - Password manager using images")
         Log.info("Available commands:")
-        for c in "copy <name>.list.new <name>.show <name>".split("."):
+        for c in "copy <name>.list.new <name>.show <name>.delete <name>".split("."):
             Log.info(f" - {c}")
     case "copy":
         copy(args)
@@ -30,6 +30,8 @@ match command:
         new(args)
     case "show":
         show(args)
+    case "delete":
+        delete(args)
     case _:
         Log.error("unknown command")
         exit(1)

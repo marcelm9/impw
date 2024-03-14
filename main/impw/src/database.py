@@ -29,3 +29,9 @@ class Database:
     def exists(name: str):
         path = os.path.join(PATH_DB, name + ".png")
         return os.path.exists(path)
+    
+    @staticmethod
+    def delete(name: str):
+        path = os.path.join(PATH_DB, name + ".png")
+        os.remove(path)
+        Log.info(f"Deleted image for '{name}'")
