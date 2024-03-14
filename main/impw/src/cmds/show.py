@@ -19,6 +19,7 @@ def show(args: list[str]):
     screen = pygame.display.set_mode((SIDELENGTH * PIXEL_SIZE, SIDELENGTH * PIXEL_SIZE))
     fpsclock = pygame.time.Clock()
     fps = 60
+    pygame.display.set_caption(f"impw - {args[0]}")
 
     img = Database.load(args[0])
     img = pygame.transform.scale(img, (SIDELENGTH * PIXEL_SIZE, SIDELENGTH * PIXEL_SIZE))

@@ -19,6 +19,7 @@ def new(args: list[str]):
     surface = pygame.Surface((SIDELENGTH, SIDELENGTH))
     fpsclock = pygame.time.Clock()
     fps = 120
+    pygame.display.set_caption(f"impw - {args[0]}")
 
     old_pos = None
 
