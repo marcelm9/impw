@@ -9,13 +9,14 @@ from .paths import PATH_DB
 class Database:
 
     @staticmethod
-    def save(surface: pygame.Surface, name: str):
+    def save(surface: pygame.Surface, name: str, silent: bool = False):
         path = os.path.join(PATH_DB, name + ".png")
         pygame.image.save(
             surface,
             path
         )
-        Log.info(f"Saved image for '{name}'")
+        if not silent:
+            Log.info(f"Saved image for '{name}'")
 
     @staticmethod
     def load(name: str) -> pygame.Surface:
@@ -29,9 +30,20 @@ class Database:
     def exists(name: str):
         path = os.path.join(PATH_DB, name + ".png")
         return os.path.exists(path)
-    
+
     @staticmethod
-    def delete(name: str):
+    def delete(name: str, silent: bool = False):
         path = os.path.join(PATH_DB, name + ".png")
         os.remove(path)
-        Log.info(f"Deleted image for '{name}'")
+        if not silent:
+            Log.info(f"Deleted image for '{name}'")
+
+    @staticmethod
+    def rename(old: str, new: str):
+        Database.save(
+            Database.load(old),
+            new,
+            True
+        )
+        Database.delete(old, True)
+        Log.info(f"Renamed '{old}' to '{new}'")
