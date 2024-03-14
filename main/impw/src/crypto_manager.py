@@ -21,4 +21,6 @@ class CryptoManager:
                     Log.error(f"error reading from surface: color {surface.get_at((x,y))}")
                     exit(1)
 
-        return sha256(s.encode()).hexdigest()
+        s = sha256(s.encode()).hexdigest()[4:-1]
+
+        return "IMPW" + s + "*"

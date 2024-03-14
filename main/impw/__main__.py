@@ -18,14 +18,12 @@ args = parsed_args.args
 
 match command:
     case "help":
-        print("ipmw - Password manager using images")
-        print("Available commands:")
-        for c in "copy.delete.list.new.show".split("."):
-            print(f" - {c}")
+        Log.info("ipmw - Password manager using images")
+        Log.info("Available commands:")
+        for c in "copy.list.new.show".split("."):
+            Log.info(f" - {c}")
     case "copy":
         copy(args)
-    case "delete":
-        delete(args)
     case "list":
         list_(args)
     case "new":

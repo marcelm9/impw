@@ -2,9 +2,7 @@ import pygame
 
 from ..log import Log
 from ..database import Database
-
-SIDELENGTH = 200
-PIXEL_SIZE = 3
+from ..config import *
 
 ARGS_LEN = 1
 
