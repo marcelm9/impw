@@ -14,7 +14,7 @@ def delete(args: list[str]):
         Log.error(f"No image found for name '{args[0]}'")
         exit(1)
 
-    if Log.input(f"Are you sure you want to delete the image for '{args[0]}'? ") == "y":
+    if Log.input(f"Are you sure you want to delete the image for '{args[0]}'? (y/n) ") == "y":
         Database.delete(args[0])
     else:
         Log.info("Cancelled")
