@@ -1,14 +1,35 @@
 # impw
+Password manager using images.
 
-### Password manager using images
+### installation
+```bash
+git clone https://github.com/marcelm9/impw.git
+cd impw
+pip install .
+```
 
-##### Commands:
-- new <name>
-- show <name>
-- list
-- copy <name>
+### commands
+```bash
+# create new password
+python -m impw new <name>
 
-### How passwords are created
+# list all stored passwords
+python -m impw list
+
+# copy password
+python -m impw copy <name>
+
+# show drawing for password
+python -m impw show <name>
+
+# rename stored password
+python -m impw rename <old_name> <new_name>
+
+# delete stored password
+python -m impw delete <name>
+```
+
+### how passwords are created
 - draw image
 - for each pixel (scaled by 2):
     - if pixel is black, add 0
